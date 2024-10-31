@@ -1,6 +1,5 @@
 # Import python packages
 import streamlit as st
-#streamlit.title('My Parents New Healthy Diner')
 from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 
