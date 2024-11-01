@@ -37,6 +37,10 @@ if ingredients_list:
 
     ingredients_string = ''
 
+    pd_df=my_dataframe. to_pandas()
+    st.dataframe (pd_df)
+    st.stop()
+
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
 
@@ -46,11 +50,6 @@ if ingredients_list:
 
 
         st.subheader (fruit_chosen + ' Nutrition Information')
-
-        pd_df=my_dataframe. to_pandas()
-        st.dataframe (pd_df)
-        st.stop()
-
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen)
         fv_df = st.dataframe (data=fruityvice_response.json(), use_container_width=True)
 
