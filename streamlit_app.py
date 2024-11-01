@@ -30,10 +30,6 @@ ingredients_list = st.multiselect(
     , max_selections = 5
     )
 
-pd_df=my_dataframe. to_pandas()
-st.dataframe (pd_df)
-st.stop()
-
 
 if ingredients_list:
     #st.write(ingredients_list)
@@ -50,6 +46,11 @@ if ingredients_list:
 
 
         st.subheader (fruit_chosen + ' Nutrition Information')
+
+        pd_df=my_dataframe. to_pandas()
+        st.dataframe (pd_df)
+        st.stop()
+
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen)
         fv_df = st.dataframe (data=fruityvice_response.json(), use_container_width=True)
 
